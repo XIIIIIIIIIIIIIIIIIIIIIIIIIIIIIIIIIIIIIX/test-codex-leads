@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lead Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Attempt to include Aceternity UI via CDN if available -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aceternity-ui/dist/aceternity.min.css">
+</head>
+<body>
+  <h1>Lead Management (Kanban)</h1>
+  <div id="createLeadForm">
+    <input type="text" id="leadName" placeholder="Lead name">
+    <input type="text" id="leadEmail" placeholder="Email">
+    <input type="text" id="leadCompany" placeholder="Company">
+    <select id="leadColumn">
+      <option value="new">New</option>
+      <option value="contacted">Contacted</option>
+      <option value="client">Client</option>
+    </select>
+    <button id="addLead">Add Lead</button>
+  </div>
+  <div id="board">
+    <div class="column" data-status="new">
+      <h2>New</h2>
+      <div class="leadContainer" id="new"></div>
+    </div>
+    <div class="column" data-status="contacted">
+      <h2>Contacted</h2>
+      <div class="leadContainer" id="contacted"></div>
+    </div>
+    <div class="column" data-status="client">
+      <h2>Client</h2>
+      <div class="leadContainer" id="client"></div>
+    </div>
+  </div>
+
+  <!-- Modal for editing -->
+  <div id="modal" class="hidden">
+    <div class="modal-content">
+      <h3>Edit Lead</h3>
+      <input type="text" id="editName" placeholder="Lead name">
+      <input type="text" id="editEmail" placeholder="Email">
+      <input type="text" id="editCompany" placeholder="Company">
+      <select id="editColumn">
+        <option value="new">New</option>
+        <option value="contacted">Contacted</option>
+        <option value="client">Client</option>
+      </select>
+      <button id="saveLead">Save</button>
+      <button id="cancelEdit">Cancel</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
